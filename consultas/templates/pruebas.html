@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pruebas</title>
+    <div class="container col-lg-5">
+        <br><br>
+        <form name="formulario" method=""  onsubmit="return separar_digitos()">
+            
+                <input type="text" class="form-control" id="rut" placeholder="Rut"/>
+            
+                    <!--despejar digitos de un rut-->
+                    <script>
+                        function separar_digitos()
+                        {
+                            var rut=formulario.rut.value;
+                            var rut=parseInt(rut,10);
+                            var digito=rut%10;
+                            console.log("RUT == "+rut+" DIGITO == "+digito);
+                            for(i=1;i<=cuerpo.length;i++) {
+    
+                            }
+
+                            return false;                          
+                        }
+
+                    </script>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</head>
+<body>
+    
+</body>
+</html>

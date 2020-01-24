@@ -1,0 +1,34 @@
+
+{% block contene %}
+
+{% if form.errors %}
+<p>Su nombre de usuario y contraseña no coinciden, intente nuevamente.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>su cuenta no tiene acceso a esta página para proceder, inicie sesión con una cuenta que tenga acceso</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+<div>
+    <td>{{form.username.label_tag}}</td>
+    <td>{{form.username}}</td>
+</div>
+<div>
+    <td>{{ form.password.label_tag}}</td>
+    <td>{{ form.password}}</td>
+</div>
+
+<div>
+    <input type="submit" value="Iniciar" />
+    <input type="hidden" name="next" value="{{ next }}" />
+</div>
+</form>
+
+{# assumes you setup the password_reset view in you urlconf #}
+<p><a href="{% url 'password_reset' %}">Se olvido de su contraseña?</a></p>
+{% endblock contene %}

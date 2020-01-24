@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {%block title %}
+        <title>Portada</title>
+        {% endblock %}
+
+        {% load static%}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<style type="{% static 'fonts/css'%}">
+            p{font-family:Arial, Helvetica, sans-serif}
+        </style>
+
+        {% block navbar %}
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'index' %}">Programadores Chile</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}" target="_blank">Inicio<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}" target="_blank">Contactenos</a>
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}" target="_blank">iniciar seccion</a>
+                    <li class="nav-item">
+                    </li>
+                </ul>
+        </header>
+        {% endblock %}
+
+        {% block tarjeta  %}
+        <div class="card" style="float:left;margin-right: 10px;margin-left: 10px; margin-bottom: 100px;margin-top: 10px;">
+		<img class="card-img-top" src="{% static 'Img\equipo.jpg'%}" alt="Card image cap">
+		<div class="card-body" style="text-align: left;">
+			<div class="card-text">
+				<h6>
+					Somos una empresa integral que aborda los proyectos desde su diseño,mantención y
+					monitoreo permanente.
+					poniendo al servicio de nuestros clientes,
+					distintos conocimientos y especialidades en un sólo equipo técnico.
+				</h6>
+			</div>
+				
+		</div>
+	</div>
+        {% endblock %}
+            
+        {% block distribucion_imagenes%}
+            <!--fila 1-->
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm">
+			<div class="card" style="width: 18rem;margin-bottom: 100px;">
+				<img class="card-img-top" src="{% static 'Img\fotos equipo\laura.jpg'%}" alt="cafe">
+				<div class="card-body">
+					<h5 class="card-title">Laura Vitale</h5>
+					<p class="card-text">Java Developer Senior </p>
+				</div>
+			</div>
+		  </div>
+		  <div class="col-sm">
+			<div class="card" style="width: 18rem;margin-bottom: 100px;">
+				<img class="card-img-top" src="{% static 'Img\fotos equipo\clara.jpg' %}" alt="cafe">    
+				<div class="card-body">
+					<h5 class="card-title">Regina Williams</h5>
+					<p class="card-text">Management DataBase</p>
+				</div>
+			</div>
+		  </div>
+		  <div class="col-sm">
+			<div class="card" style="width: 18rem;margin-bottom: 100px;">
+				<img class="card-img-top" src="{% static 'Img\fotos equipo\Sofia.jpg' %}" alt="cafe">
+				<div class="card-body">
+					<h5 class="card-title">Adalia Meier</h5>
+					<p class="card-text">Master in Security Software </p>
+				</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <!--fila 2-->
+	  <div class="container">
+		<div class="row">
+		  <div class="col-sm">
+			<div class="card" style="width: 18rem;margin-bottom: 100px;">
+				<img class="card-img-top" src="{% static 'Img\fotos equipo\frank.jpg' %}" alt="cafe">
+				<div class="card-body">
+					<h5 class="card-title">Frank Baker</h5>
+					<p class="card-text">CEO</p>
+				</div>
+			</div>
+		  </div>
+		  <div class="col-sm">
+			<div class="card" style="width: 18rem;margin-bottom: 100px;">
+				<img class="card-img-top" src="{% static 'Img\fotos equipo\chino.jpg' %}" alt="cafe">
+				<div class="card-body">
+					<h5 class="card-title">Hikaru Ueda</h5>
+					<p class="card-text">Software Architect</p>
+				</div>
+			</div>
+		  </div>
+		  <div class="col-sm">
+			<div class="card" style="width: 18rem;margin-bottom: 100px;">
+				<img class="card-img-top" src="{% static 'Img\fotos equipo\samantha.jpg' %}" alt="cafe">
+				<div class="card-body">
+					<h5 class="card-title">Samantha Laurenz</h5>
+					<p class="card-text">Bussines Administration</p>
+				</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+        {% endblock %}
+    </head>
+    <body background="{%  static 'Img/fondo.jpg' %}">
+        {%block class="fixed-bottom" %}
+        <div class="fixed-bottom">
+        
+
+        </span> Santiago de Chile<span><br>
+        </span>+569-983 4572 +562-7845291 <br>
+        </span><a href="mailto:info@programadoreschile.cl">info@programadoreschile.cl</a>
+        </div>
+        {%endblock %}
+       
+        <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js'%}"></script>
+       
+
+    </body>
+</html>
